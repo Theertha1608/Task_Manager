@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="user.name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="user.email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="user.password">
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required [(ngModel)]="confirmPassword">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid || !isPasswordMatch()">SignUp</button>
+</form>
