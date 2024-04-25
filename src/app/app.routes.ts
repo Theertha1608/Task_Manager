@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './Components/Authentication/login/login.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { SideNavbarComponent } from './Components/side-navbar/side-navbar.component';
 
 
 export const routes: Routes = [
@@ -10,4 +11,5 @@ export const routes: Routes = [
         loadComponent: () => import('./Components/Authentication/signup/signup.component').then((c) => c.SignupComponent)
     },
     { path: 'dashboard', component: DashboardComponent },
+    { path: 'side-navbar', component: SideNavbarComponent},
 ];

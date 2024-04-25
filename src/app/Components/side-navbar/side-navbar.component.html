@@ -1,0 +1,23 @@
+
+<div class="navbar">
+    <h2>Task-Manager</h2>
+
+</div>
+
+<div>
+    <div class="toggle-button-row" (click)="toggleSideOut()">
+        <mat-icon>menu</mat-icon>
+    </div>
+</div>
+
+<div class="slide-out-panel" [class.slide-out]="isSideOut">
+    <div class="slide-out-content">
+        <h3 class="nav">To-Do</h3>
+        <p class="edit-col" (click)="onHome()">Home</p>
+        <p class="edit-col" (click)="onProfile()">Profile</p>
+        <p class="edit-col" (click)="onHome()">Home2</p>
+        <p class="edit-col" (click)="onLogout()">Logout</p>
+
+    </div>
+
+</div>
