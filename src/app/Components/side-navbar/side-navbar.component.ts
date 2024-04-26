@@ -24,8 +24,8 @@ export class SideNavbarComponent {
     onProfile(){
     this.router.navigate(['/profile']);
     }
-    onHistory(){
-    this.router.navigate(['/dashboard']);
+    onAddTask(){
+    this.router.navigate(['/create-task']);
     }
     onLogout(){
     this.router.navigate(['']);
