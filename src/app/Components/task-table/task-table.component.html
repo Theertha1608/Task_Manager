@@ -1,21 +1,32 @@
-<p>task-table works!</p>
-<table>
+<div class="table-container">
+  <div class="filter-container">
+    <label for="status-filter">Filter by Status:</label>
+    <select id="status-filter" [(ngModel)]="selectedStatus" (change)="filterTasks()">
+      <option value="all">All</option>
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+      <option value="overdue">Overdue</option>
+    </select>
+  </div>
+  <table>
     <thead>
       <tr>
         <th>Title</th>
         <th>Due Date</th>
         <th>Actions</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let task of tasks">
+      <tr *ngFor="let task of filteredTasks">
         <td>{{ task.title }}</td>
         <td>{{ task.dueDate }}</td>
         <td>
-          <button (click)="markAsCompleted(task)">Mark as Completed</button>
+          <button (click)="markAsCompleted(task)">Completed</button>
           <button (click)="deleteTask(task)">Delete</button>
         </td>
+        <td>{{ task.status }}</td>
       </tr>
     </tbody>
   </table>
-  
+</div>

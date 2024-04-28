@@ -1,53 +1,45 @@
 {
   "tasks": [
     {
-      "id": "b1af",
-      "title": "read book",
-      "description": "Ram ",
+      "id": "0409",
+      "title": "watch movies",
+      "description": "watch favorite movies",
       "dueDate": "2024-05-08",
-      "priority": "Medium",
+      "priority": "Low",
       "status": "Pending",
       "completed": true
     },
     {
-      "id": "8261",
-      "completed": true
+      "id": "2143",
+      "title": "set alaram",
+      "description": "set alarm for every morning",
+      "dueDate": "2024-05-10",
+      "priority": "Low",
+      "status": "Pending"
     },
     {
-      "id": "1ea3",
-      "completed": true
-    },
-    {
-      "id": "6879",
-      "title": "eat",
-      "description": "junk food",
+      "id": "63e3",
+      "title": "overdue",
+      "description": "overdue",
       "dueDate": "2024-04-08",
-      "priority": "Medium",
-      "status": "Completed"
-    },
-    {
-      "id": "a342",
-      "title": "task completion",
-      "description": "angular",
-      "dueDate": "2024-05-02",
-      "priority": "Medium",
-      "status": "Pending"
-    },
-    {
-      "id": "57df",
-      "title": "writing",
-      "description": "writing record book",
-      "dueDate": "2024-05-01",
       "priority": "High",
       "status": "Pending"
     },
     {
-      "id": "4400",
-      "title": "task completion",
-      "description": "final task",
-      "dueDate": "2024-05-07",
-      "priority": "High",
+      "id": "2aae",
+      "title": "completed",
+      "description": "completed",
+      "dueDate": "2024-04-28",
+      "priority": "Medium",
       "status": "Completed"
+    },
+    {
+      "id": "58b9",
+      "title": "pending",
+      "description": "pending",
+      "dueDate": "2024-04-30",
+      "priority": "Medium",
+      "status": "Pending"
     }
   ]
 }
