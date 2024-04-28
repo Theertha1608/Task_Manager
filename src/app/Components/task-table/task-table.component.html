@@ -1,0 +1,21 @@
+<p>task-table works!</p>
+<table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Due Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.title }}</td>
+        <td>{{ task.dueDate }}</td>
+        <td>
+          <button (click)="markAsCompleted(task)">Mark as Completed</button>
+          <button (click)="deleteTask(task)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

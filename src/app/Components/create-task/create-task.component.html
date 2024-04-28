@@ -1,37 +1,55 @@
 <app-side-nav></app-side-nav>
-<p>create-task works!</p>
+<h1 class="heading">Create New Task</h1>
 
-<div>
-    <h2>Create New Task</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" class="form-control" id="title" name="title" required [(ngModel)]="task.title">
-      </div>
-      <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-control" id="description" name="description" [(ngModel)]="task.description"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="dueDate">Due Date:</label>
-        <input type="date" class="form-control" id="dueDate" name="dueDate" [(ngModel)]="task.dueDate" required>
-      </div>
-      <div class="form-group">
-        <label for="priority">Priority:</label>
-        <select class="form-control" id="priority" name="priority" [(ngModel)]="task.priority" required>
-          <option value="High">High</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="status">Status:</label>
-        <select class="form-control" id="status" name="status" [(ngModel)]="task.status" required>
-          <option value="Pending">Pending</option>
-          <option value="Completed">Completed</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Create Task</button>
-    </form>
-  </div>
-  
+<div class="register-form">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+
+    <!-- Title -->
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" formControlName="title">
+      <div *ngIf="isFieldInvalid('title')" class="invalid-feedback">Title is required.</div>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" formControlName="description"></textarea>
+      <div *ngIf="isFieldInvalid('description')" class="invalid-feedback">Description is required.</div>
+    </div>
+
+    <!-- Due Date -->
+    <div class="form-group">
+      <label>Due Date</label>
+      <input type="date" class="form-control" formControlName="dueDate">
+      <div *ngIf="isFieldInvalid('dueDate')" class="invalid-feedback">Due Date is required.</div>
+    </div>
+
+    <!-- Priority -->
+    <div class="form-group">
+      <label>Priority</label>
+      <select class="form-control" formControlName="priority">
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <div *ngIf="isFieldInvalid('priority')" class="invalid-feedback">Priority is required.</div>
+    </div>
+
+    <!-- Status -->
+    <div class="form-group">
+      <label>Status</label>
+      <select class="form-control" formControlName="status">
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <div *ngIf="isFieldInvalid('status')" class="invalid-feedback">Status is required.</div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit" class="button" [disabled]="taskForm.invalid">Create Task</button>
+    </div>
+
+  </form>
+</div>

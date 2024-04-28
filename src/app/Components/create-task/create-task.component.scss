@@ -1,0 +1,55 @@
+/* Styles for the Create New Task form */
+.heading{
+    text-align: center;
+}
+
+.register-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #08747c;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+  /* Styles for form labels */
+  .register-form label {
+    font-weight: bold;
+  }
+  
+  /* Styles for form inputs */
+  .register-form input[type="text"],
+  .register-form textarea,
+  .register-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Styles for invalid feedback messages */
+  .invalid-feedback {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Styles for submit button */
+  .register-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0c807a;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .register-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

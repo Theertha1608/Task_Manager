@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
+import { TaskTableComponent } from '../task-table/task-table.component';
 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [SideNavbarComponent],
+  imports: [SideNavbarComponent, TaskTableComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

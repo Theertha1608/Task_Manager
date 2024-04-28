@@ -4,6 +4,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { SideNavbarComponent } from './Components/side-navbar/side-navbar.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { CreateTaskComponent } from './Components/create-task/create-task.component';
+import { TaskTableComponent } from './Components/task-table/task-table.component';
 
 
 export const routes: Routes = [
@@ -16,4 +17,5 @@ export const routes: Routes = [
     { path: 'side-navbar', component: SideNavbarComponent},
     { path: 'profile', component: ProfileComponent},
     { path: 'create-task', component: CreateTaskComponent},
+    { path: 'task-table', component: TaskTableComponent},
 ];

@@ -1,23 +1,53 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Task 1",
-      "description": "Description of Task 1",
-      "dueDate": "2024-04-30",
-      "priority": "High",
-      "status": "Pending"
-    },
-    {
       "id": "b1af",
       "title": "read book",
       "description": "Ram ",
       "dueDate": "2024-05-08",
       "priority": "Medium",
+      "status": "Pending",
+      "completed": true
+    },
+    {
+      "id": "8261",
+      "completed": true
+    },
+    {
+      "id": "1ea3",
+      "completed": true
+    },
+    {
+      "id": "6879",
+      "title": "eat",
+      "description": "junk food",
+      "dueDate": "2024-04-08",
+      "priority": "Medium",
+      "status": "Completed"
+    },
+    {
+      "id": "a342",
+      "title": "task completion",
+      "description": "angular",
+      "dueDate": "2024-05-02",
+      "priority": "Medium",
       "status": "Pending"
     },
     {
-      "id": "8261"
+      "id": "57df",
+      "title": "writing",
+      "description": "writing record book",
+      "dueDate": "2024-05-01",
+      "priority": "High",
+      "status": "Pending"
+    },
+    {
+      "id": "4400",
+      "title": "task completion",
+      "description": "final task",
+      "dueDate": "2024-05-07",
+      "priority": "High",
+      "status": "Completed"
     }
   ]
 }
