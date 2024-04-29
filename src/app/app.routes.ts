@@ -5,6 +5,8 @@ import { SideNavbarComponent } from './Components/side-navbar/side-navbar.compon
 import { ProfileComponent } from './Components/profile/profile.component';
 import { CreateTaskComponent } from './Components/create-task/create-task.component';
 import { TaskTableComponent } from './Components/task-table/task-table.component';
+import { TaskDetailsComponent } from './Components/task-details/task-details.component';
+
 
 
 export const routes: Routes = [
@@ -18,4 +20,6 @@ export const routes: Routes = [
     { path: 'profile', component: ProfileComponent},
     { path: 'create-task', component: CreateTaskComponent},
     { path: 'task-table', component: TaskTableComponent},
+    { path: 'task-details/:id', component: TaskDetailsComponent }
+
 ];

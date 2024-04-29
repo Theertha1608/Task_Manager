@@ -1,22 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CreateTaskComponent } from '../create-task/create-task.component';
 import { TaskService } from '../../Services/task.service';
 import { FormsModule } from '@angular/forms';
+import { TaskDetailsComponent } from '../task-details/task-details.component';
+import { Router, RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-task-table',
   standalone: true,
-  imports: [CommonModule, FormsModule, CreateTaskComponent],
+  imports: [CommonModule, RouterModule, FormsModule, CreateTaskComponent, TaskDetailsComponent],
   templateUrl: './task-table.component.html',
   styleUrl: './task-table.component.scss'
 })
-export class TaskTableComponent {
+export class TaskTableComponent implements OnInit {
   tasks: any[] = [];
   filteredTasks: any[] = [];
   selectedStatus: string = 'all';
 
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchTasks();
@@ -29,7 +32,14 @@ export class TaskTableComponent {
     });
   }
 
+  viewTaskDetails(taskId: number): void {
+    this.router.navigate(['/task-details', taskId]);
+  }
 
+  navigateToCreateTask(): void {
+    this.router.navigate(['/create-task']);
+  }
+  
   filterTasks(): void {
     if (this.selectedStatus === 'all') {
       this.filteredTasks = [...this.tasks];
@@ -47,43 +57,25 @@ export class TaskTableComponent {
       });
     }
   }
-  
-  
-  deleteTask(task: any): void {
-    this.taskService.deleteTask(task.id).subscribe(
-      () => {
-        console.log('Task deleted successfully:', task);
-   
-        alert('Task deleted successfully');
-        this.tasks = this.tasks.filter(t => t.id !== task.id);
-        this.filterTasks(); 
-      },
-      error => {
-        console.error('Error deleting task:', error);
-      }
-    );
-  }
-  
-
- markAsCompleted(task: any): void {
-  if (task.status === 'Completed') {
-    alert('The task is already completed.');
-  } else {
-    this.taskService.markTaskAsCompleted(task.id).subscribe(
-      () => {
-        alert('Task marked as completed successfully!');
-        const updatedTask = { ...task, status: 'Completed' };
-        const index = this.tasks.findIndex(t => t.id === task.id);
-        if (index !== -1) {
-          this.tasks[index] = updatedTask;
-          this.filterTasks(); 
+  markAsCompleted(task: any): void {
+    if (task.status === 'Completed') {
+      alert('The task is already completed.');
+    } else {
+      this.taskService.markTaskAsCompleted(task.id).subscribe(
+        () => {
+          alert('Task marked as completed successfully!');
+          const updatedTask = { ...task, status: 'Completed' };
+          const index = this.tasks.findIndex(t => t.id === task.id);
+          if (index !== -1) {
+            this.tasks[index] = updatedTask;
+            this.filterTasks(); 
+          }
+        },
+        error => {
+          console.error('Error marking task as completed:', error);
         }
-      },
-      error => {
-        console.error('Error marking task as completed:', error);
-      }
-    );
+      );
+    }
   }
-}
 }
 

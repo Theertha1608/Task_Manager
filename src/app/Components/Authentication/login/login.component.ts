@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 // import { NavbarComponent } from '../../navbar/navbar.component';
 import { SideNavbarComponent } from '../../side-navbar/side-navbar.component';

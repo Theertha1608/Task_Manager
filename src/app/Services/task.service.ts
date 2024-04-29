@@ -17,6 +17,11 @@ export class TaskService {
   }
 
 
+  getTaskById(taskId: string): Observable<any> {
+    const url = `${this.apiUrl}/${taskId}`;
+    return this.http.get<any>(url);
+  }
+  
   createTask(task: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, task);
   }
@@ -33,6 +38,9 @@ export class TaskService {
     return this.http.patch<any>(url, completedTask);
   }
 
-
+  updateTask(taskId: number, updatedTask: any): Observable<any> {
+    const url = `${this.apiUrl}/${taskId}`;
+    return this.http.put<any>(url, updatedTask);
+  }
 
 }

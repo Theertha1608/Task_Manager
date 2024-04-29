@@ -4,6 +4,7 @@ import { TaskService } from '../../Services/task.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
+import { Router } from '@angular/router';
 
 
 
@@ -17,7 +18,7 @@ import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
 export class CreateTaskComponent implements OnInit {
   taskForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private taskService: TaskService) {}
+  constructor(private formBuilder: FormBuilder, private taskService: TaskService, private router: Router) {}
 
   ngOnInit() {
     this.initForm();
@@ -40,6 +41,7 @@ export class CreateTaskComponent implements OnInit {
           console.log('Task created successfully!', response);
           this.taskForm.reset();
           alert('Task created successfully!');
+          this.router.navigate(['/dashboard']);
         },
         error => {
           console.error('Error creating task:', error);
