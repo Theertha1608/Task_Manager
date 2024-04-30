@@ -1,48 +1,53 @@
 <app-side-nav></app-side-nav>
 <div *ngIf="task" class="task-details-container">
     <div class="task-details">
-    <h1>{{ task.title }}</h1>
-    <p class="description">Description: {{ task.description }}</p>
-    <p class="due-date">Due Date: {{ task.dueDate }}</p>
-    <p class="priority">Priority: {{ task.priority }}</p>
-    <p class="status">Status: {{ task.status }}</p>
-    <button class="button" (click)="editTask()">Edit</button>
-    <button class="button" (click)="deleteTask()">Delete</button>
-</div>
+        <h1>{{ task.title }}</h1>
+        <p class="description">Description: {{ task.description }}</p>
+        <p class="due-date">Due Date: {{ task.dueDate }}</p>
+        <p class="priority">Priority: {{ task.priority }}</p>
+        <p class="status">Status: {{ task.status }}</p>
+        <button class="button" (click)="editTask()">Edit</button>
+        <button class="button" (click)="deleteTask()">Delete</button>
 
+        <!-- Only show the checkbox if the task status is not 'Completed' -->
+        <div *ngIf="task.status !== 'Completed'">
+          <input type="checkbox" [(ngModel)]="taskCompleted" (change)="changeTaskStatus()">
+          <label for="task-status-checkbox">Task Completed</label>
+      </div>
+      
+    </div>
 
     <div *ngIf="showEditForm" class="edit-task-form">
-      <h2>Edit Task</h2>
-      <form (ngSubmit)="onSubmitEditForm()">
-        <div>
-          <label>Title:</label>
-          <input type="text" [(ngModel)]="task.title" name="title" required>
-        </div>
-        <div>
-          <label>Description:</label>
-          <textarea [(ngModel)]="task.description" name="description" required></textarea>
-        </div>
-        <div>
-          <label>Due Date:</label>
-          <input type="date" [(ngModel)]="task.dueDate" name="dueDate" required>
-        </div>
-        <div>
-          <label>Priority:</label>
-          <select [(ngModel)]="task.priority" name="priority" required>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-          </select>
-        </div>
-        <div>
-          <label>Status:</label>
-          <select [(ngModel)]="task.status" name="status" required>
-            <option value="Pending">Pending</option>
-            <option value="Completed">Completed</option>
-          </select>
-        </div>
-        <button class="button" (click)="updateTask()">Update</button>
-      </form>
+        <h2>Edit Task</h2>
+        <form (ngSubmit)="saveTask()">
+            <div>
+                <label>Title:</label>
+                <input type="text" [(ngModel)]="task.title" name="title" required>
+            </div>
+            <div>
+                <label>Description:</label>
+                <textarea [(ngModel)]="task.description" name="description" required></textarea>
+            </div>
+            <div>
+                <label>Due Date:</label>
+                <input type="date" [(ngModel)]="task.dueDate" name="dueDate" required>
+            </div>
+            <div>
+                <label>Priority:</label>
+                <select [(ngModel)]="task.priority" name="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div>
+                <label>Status:</label>
+                <select [(ngModel)]="task.status" name="status" required>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+            <button class="button">Update</button>
+        </form>
     </div>
-  </div>
-  
+</div>

@@ -18,6 +18,7 @@ export class TaskDetailsComponent implements OnInit {
   taskId: any;
   task: any;
   showEditForm: boolean = false;
+  taskCompleted: boolean = false; 
 
   constructor(private route: ActivatedRoute, private taskService: TaskService, private router: Router) {}
 
@@ -52,12 +53,13 @@ export class TaskDetailsComponent implements OnInit {
     this.showEditForm = true;
   }
 
-  
-
-  updateTask(): void {
-    this.showEditForm = true;
+  changeTaskStatus() {
+    const newStatus = this.taskCompleted ? 'Completed' : 'Pending';
+    this.task.status = newStatus;
+    this.saveTask(); // Save the task and navigate to dashboard
   }
-  onSubmitEditForm(): void {
+  
+  saveTask(): void {
     if (this.taskId !== null && this.task) {
       this.taskService.updateTask(this.taskId, this.task).subscribe(
         response => {
@@ -68,12 +70,15 @@ export class TaskDetailsComponent implements OnInit {
         },
         error => {
           console.error('Error updating task:', error);
+          window.alert('Failed to update task. Please try again.');
         }
       );
     } else {
       console.error('Task ID or task object is null.');
+      window.alert('Failed to update task. Task ID or task object is null.');
     }
   }
+  
 
   deleteTask(): void {
     if (this.taskId !== null) {

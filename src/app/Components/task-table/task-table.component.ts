@@ -57,25 +57,6 @@ export class TaskTableComponent implements OnInit {
       });
     }
   }
-  markAsCompleted(task: any): void {
-    if (task.status === 'Completed') {
-      alert('The task is already completed.');
-    } else {
-      this.taskService.markTaskAsCompleted(task.id).subscribe(
-        () => {
-          alert('Task marked as completed successfully!');
-          const updatedTask = { ...task, status: 'Completed' };
-          const index = this.tasks.findIndex(t => t.id === task.id);
-          if (index !== -1) {
-            this.tasks[index] = updatedTask;
-            this.filterTasks(); 
-          }
-        },
-        error => {
-          console.error('Error marking task as completed:', error);
-        }
-      );
-    }
-  }
+
 }
 

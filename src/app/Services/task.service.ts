@@ -7,19 +7,17 @@ import { Observable } from 'rxjs';
 })
 export class TaskService {
 
-  private apiUrl = 'http://localhost:3000/tasks'; // JSON Server API URL
+
+ private apiUrl = 'http://localhost:3000/tasks'; // JSON Server API URL
 
   constructor(private http: HttpClient) {}
-
 
   getTasks(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-
   getTaskById(taskId: string): Observable<any> {
-    const url = `${this.apiUrl}/${taskId}`;
-    return this.http.get<any>(url);
+    return this.http.get<any>(`${this.apiUrl}/${taskId}`);
   }
   
   createTask(task: any): Observable<any> {
@@ -27,20 +25,15 @@ export class TaskService {
   }
 
   deleteTask(taskId: number): Observable<any> {
-    const url = `${this.apiUrl}/${taskId}`;
-    return this.http.delete<any>(url);
+    return this.http.delete<any>(`${this.apiUrl}/${taskId}`);
   }
 
   markTaskAsCompleted(taskId: number): Observable<any> {
-    const url = `${this.apiUrl}/${taskId}`;
-    // Assuming you have a field called 'completed' in your task object
-    const completedTask = { completed: true };
-    return this.http.patch<any>(url, completedTask);
+    return this.http.patch<any>(`${this.apiUrl}/${taskId}`, { completed: true });
   }
 
   updateTask(taskId: number, updatedTask: any): Observable<any> {
-    const url = `${this.apiUrl}/${taskId}`;
-    return this.http.put<any>(url, updatedTask);
+    return this.http.put<any>(`${this.apiUrl}/${taskId}`, updatedTask);
   }
-
 }
+
