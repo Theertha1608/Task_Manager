@@ -7,11 +7,12 @@ import { SideNavbarComponent } from '../../side-navbar/side-navbar.component';
 import { CommonModule } from '@angular/common';
 import { SignupComponent } from '../signup/signup.component';
 import { AuthService } from '../../../Services/auth.service';
+import { UserService } from '../../../Services/user.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule,RouterLink, RouterOutlet, DashboardComponent, SideNavbarComponent, SignupComponent],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterLink, RouterOutlet, DashboardComponent, SideNavbarComponent, SignupComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -21,8 +22,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router 
-    
+    private router: Router,
+    private userService: UserService // Inject UserService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -42,19 +43,20 @@ export class LoginComponent implements OnInit {
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password)
         .subscribe(
-          (user: any) => {
+          (user) => {
             if (user) {
               console.log('Login successful:', user);
-              alert('Login successful!'); 
-              this.router.navigate(['/dashboard']); 
+              alert('Login successful!');
+              this.userService.setCurrentUser(user); // Set the current user
+              this.router.navigate(['/dashboard']);
             } else {
               console.error('Invalid email or password');
               alert('Invalid email or password');
             }
           },
-          (error: any) => {
+          (error) => {
             console.error('Login error:', error);
-            alert('An error occurred during login'); 
+            alert('An error occurred during login');
           }
         );
     }

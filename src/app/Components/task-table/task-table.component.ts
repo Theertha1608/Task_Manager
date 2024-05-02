@@ -5,6 +5,7 @@ import { TaskService } from '../../Services/task.service';
 import { FormsModule } from '@angular/forms';
 import { TaskDetailsComponent } from '../task-details/task-details.component';
 import { Router, RouterModule } from '@angular/router';
+import { UserService } from '../../Services/user.service';
 
 
 @Component({
@@ -14,23 +15,39 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './task-table.component.html',
   styleUrl: './task-table.component.scss'
 })
+
 export class TaskTableComponent implements OnInit {
   tasks: any[] = [];
   filteredTasks: any[] = [];
   selectedStatus: string = 'all';
+  currentUser: any; // Define currentUser variable
 
-  constructor(private taskService: TaskService, private router: Router) {}
+  constructor(private taskService: TaskService, private router: Router, private userService: UserService) {}
 
   ngOnInit(): void {
-    this.fetchTasks();
+    this.userService.currentUser$.subscribe(user => {
+      if (user) {
+        this.currentUser = user; // Assign the current user
+        this.fetchTasks(); // Fetch tasks associated with the current user
+      } else {
+        this.router.navigate(['/login']); // Redirect to the login page if the user is not authenticated
+      }
+    });
   }
 
   fetchTasks(): void {
-    this.taskService.getTasks().subscribe((tasks: any[]) => {
-      this.tasks = tasks;
-      this.filteredTasks = [...this.tasks]; 
-    });
+    this.taskService.getTasksByUserId(this.currentUser.id).subscribe(
+      (      tasks: any[]) => {
+        this.tasks = tasks;
+        this.filteredTasks = [...this.tasks];
+      },
+      (      error: any) => {
+        console.error('Error fetching tasks:', error);
+      }
+    );
   }
+
+
 
   viewTaskDetails(taskId: number): void {
     this.router.navigate(['/task-details', taskId]);

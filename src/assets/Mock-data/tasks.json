@@ -1,45 +1,39 @@
 {
   "tasks": [
     {
-      "id": "50b9",
-      "title": "hgfn",
-      "description": "thghg",
-      "dueDate": "2024-05-10",
+      "id": "ab70",
+      "title": "vipi",
+      "description": "vipi",
+      "dueDate": "2024-05-27",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "cc83"
+    },
+    {
+      "id": "898c",
+      "title": "anjalis task",
+      "description": "anjali",
+      "dueDate": "2024-06-06",
+      "priority": "Medium",
+      "status": "Pending"
+    },
+    {
+      "id": "03e9",
+      "title": "anjali",
+      "description": "anjali",
+      "dueDate": "2024-06-04",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "4bdc"
+    },
+    {
+      "id": "8e65",
+      "title": "jun",
+      "description": "jun",
+      "dueDate": "2024-06-05",
       "priority": "Medium",
       "status": "Completed",
-      "completed": true
-    },
-    {
-      "id": "c450",
-      "title": "sdfgfd",
-      "description": "dfgdf",
-      "dueDate": "2024-05-01",
-      "priority": "Medium",
-      "status": "Completed"
-    },
-    {
-      "id": "6d6d",
-      "title": "ad",
-      "description": "asdssssssssssss",
-      "dueDate": "2024-04-17",
-      "priority": "Medium",
-      "status": "Completed"
-    },
-    {
-      "id": "0426",
-      "title": "ss",
-      "description": "ss",
-      "dueDate": "2024-05-10",
-      "priority": "Medium",
-      "status": "Completed"
-    },
-    {
-      "id": "0f82",
-      "title": "mmnn",
-      "description": "nnmnn",
-      "dueDate": "2024-05-09",
-      "priority": "Medium",
-      "status": "Completed"
+      "userId": "bf68"
     }
   ],
   "users": [
@@ -58,53 +52,18 @@
       "profilePicture": "path_to_user2_profile_picture.jpg"
     },
     {
-      "id": "6f0c",
-      "username": "thee",
-      "email": "thee@gmail.com",
+      "id": "4bdc",
+      "username": "anjali",
+      "email": "anjali@gmail.com",
       "password": "123",
       "profilePicture": "IMG_20191128_170254.jpg"
     },
     {
-      "id": "d749",
-      "username": "thee",
-      "email": "thee@gmail.com",
-      "password": "123",
-      "profilePicture": "IMG_20191128_170254.jpg"
-    },
-    {
-      "id": "b178",
+      "id": "bf68",
       "username": "jun",
       "email": "jun@gmail.com",
       "password": "123",
-      "profilePicture": "IMG_20191128_170254.jpg"
-    },
-    {
-      "id": "f4a7",
-      "username": "hana",
-      "email": "hana@gmail.com",
-      "password": "123",
-      "profilePicture": "IMG_20191128_170254.jpg"
-    },
-    {
-      "id": "a91c",
-      "username": "hana",
-      "email": "hana1@gmail.com",
-      "password": "123",
-      "profilePicture": "IMG_20191128_170254.jpg"
-    },
-    {
-      "id": "d540",
-      "username": "jun1",
-      "email": "jun1@gmail.com",
-      "password": "123",
-      "profilePicture": "IMG_20191128_170254.jpg"
-    },
-    {
-      "id": "37ec",
-      "username": "jujn",
-      "email": "jun3@gmail.com",
-      "password": "123",
-      "profilePicture": "IMG_20191128_170254.jpg"
+      "profilePicture": "IMG_20191128_143147.jpg"
     }
   ]
 }

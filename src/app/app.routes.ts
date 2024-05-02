@@ -17,7 +17,7 @@ export const routes: Routes = [
     },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'side-navbar', component: SideNavbarComponent},
-    { path: 'profile', component: ProfileComponent},
+    { path: 'user-profile', component: ProfileComponent},
     { path: 'create-task', component: CreateTaskComponent},
     { path: 'task-table', component: TaskTableComponent},
     { path: 'task-details/:id', component: TaskDetailsComponent }

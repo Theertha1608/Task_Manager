@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TaskService {
 
-
- private apiUrl = 'http://localhost:3000/tasks'; // JSON Server API URL
+  private apiUrl = 'http://localhost:3000/tasks'; // JSON Server API URL
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +18,12 @@ export class TaskService {
   getTaskById(taskId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${taskId}`);
   }
-  
+
+  // Add the new method to fetch tasks by user ID
+  getTasksByUserId(userId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
+  }
+
   createTask(task: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, task);
   }
@@ -36,4 +40,3 @@ export class TaskService {
     return this.http.put<any>(`${this.apiUrl}/${taskId}`, updatedTask);
   }
 }
-
