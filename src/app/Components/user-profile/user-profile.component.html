@@ -1,0 +1,23 @@
+<app-side-nav></app-side-nav>
+<div *ngIf="user" class="user-profile-container">
+  <div class="user-details">
+    <h1>User Profile</h1>
+    <p>Email: {{ user.email }}</p>
+    <div *ngIf="!editMode">
+      <p>Profile Picture: <img [src]="profileImageUrl" alt="Profile Picture"></p>
+      <p>Username: {{ user.username }}</p>
+    </div> 
+    <div *ngIf="editMode">
+      <div>
+        <label>Username:</label>
+        <input type="text" [(ngModel)]="user.username">
+      </div>
+      <div>
+        <label>Profile Picture:</label>
+        <input type="file" (change)="onFileSelected($event)">
+      </div>
+    </div>
+    <button class="button" (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+    <button class="button" *ngIf="editMode" (click)="saveUserDetails()">Save</button>
+  </div>
+</div>

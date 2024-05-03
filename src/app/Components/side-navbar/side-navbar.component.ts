@@ -22,7 +22,7 @@ export class SideNavbarComponent {
     this.router.navigate(['/dashboard']);
     } 
     onProfile(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/user-profile']);
     }
     onAddTask(){
     this.router.navigate(['/create-task']);
