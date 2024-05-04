@@ -43,6 +43,96 @@
       "priority": "Medium",
       "status": "Pending",
       "userId": "6b3d"
+    },
+    {
+      "id": "0944",
+      "title": "Reading books",
+      "description": "Reading my favorite books",
+      "dueDate": "2024-06-07",
+      "priority": "High",
+      "status": "Completed",
+      "userId": "2022"
+    },
+    {
+      "id": "f9ba",
+      "title": "Watching movies",
+      "description": "Watching my favorite movies",
+      "dueDate": "2024-06-08",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "34c0",
+      "title": "Submitt the task",
+      "description": "Submit the angular task",
+      "dueDate": "2024-05-06",
+      "priority": "High",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "833a",
+      "title": "Car Wash",
+      "description": "Wash my car",
+      "dueDate": "2024-05-05",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "945d",
+      "title": "Hair care",
+      "description": "Do hair packs ",
+      "dueDate": "2024-05-13",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "ac59",
+      "title": "Skin care",
+      "description": "Do skincare",
+      "dueDate": "2024-05-04",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "c65e",
+      "title": "Update the weekly status",
+      "description": "Update the weekly status",
+      "dueDate": "2024-05-10",
+      "priority": "Low",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "65d7",
+      "title": "clean my room",
+      "description": "clean my room",
+      "dueDate": "2024-05-07",
+      "priority": "Low",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "ca50",
+      "title": "Buy a Car",
+      "description": "Buy a Car",
+      "dueDate": "2024-05-27",
+      "priority": "Low",
+      "status": "Pending",
+      "userId": "2022"
+    },
+    {
+      "id": "a8ad",
+      "title": "completed",
+      "description": "completed",
+      "dueDate": "2024-06-06",
+      "priority": "Medium",
+      "status": "Completed",
+      "userId": "2022"
     }
   ],
   "users": [

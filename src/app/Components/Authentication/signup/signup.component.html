@@ -1,6 +1,7 @@
-<h1 class="heading">Sign Up</h1>
+<div class="signup-container">
 <div class="register-form">
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <h1 class="heading">Sign Up</h1>
+  <form class="submit-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <!-- Username -->
     <div class="form-group">
       <label>Username</label>
@@ -21,7 +22,7 @@
       <input type="password" class="form-control" formControlName="password">
       <div *ngIf="isFieldInvalid('password')" class="invalid-feedback">Password is required.</div>
     </div>
-
+     <!-- Profile picture -->
     <div class="form-group">
       <label for="profilePicture">Profile Picture</label>
       <input type="file" id="profilePicture" (change)="onFileSelected($event)" formControlName="profilePicture">
@@ -33,5 +34,6 @@
       <button type="submit" class="button" [disabled]="signupForm.invalid">Sign Up</button>
     </div>
   </form>
+</div>
 </div>
 

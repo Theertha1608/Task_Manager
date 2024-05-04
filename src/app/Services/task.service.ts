@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -39,4 +39,28 @@ export class TaskService {
   updateTask(taskId: number, updatedTask: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${taskId}`, updatedTask);
   }
+  getTasksGroupedByPriority(): Observable<{ [priority: string]: any[] }> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((tasks: any[]) => {
+        const tasksByPriority: { [priority: string]: any[] } = {
+          'High': [],
+          'Medium': [],
+          'Low': []
+        };
+
+        tasks.forEach(task => {
+          if (task.priority === 'High') {
+            tasksByPriority['High'].push(task);
+          } else if (task.priority === 'Medium') {
+            tasksByPriority['Medium'].push(task);
+          } else if (task.priority === 'Low') {
+            tasksByPriority['Low'].push(task);
+          }
+        });
+
+        return tasksByPriority;
+      })
+    );
+  }
 }
+

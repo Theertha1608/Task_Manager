@@ -55,6 +55,7 @@ export class TaskTableComponent implements OnInit {
 
   navigateToCreateTask(): void {
     this.router.navigate(['/create-task']);
+
   }
   
   filterTasks(): void {

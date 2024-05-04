@@ -6,6 +6,7 @@ import { CreateTaskComponent } from './Components/create-task/create-task.compon
 import { TaskTableComponent } from './Components/task-table/task-table.component';
 import { TaskDetailsComponent } from './Components/task-details/task-details.component';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { PieChartComponent } from './Components/pie-chart/pie-chart.component';
 
 
 
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: 'user-profile', component: UserProfileComponent},
     { path: 'create-task', component: CreateTaskComponent},
     { path: 'task-table', component: TaskTableComponent},
-    { path: 'task-details/:id', component: TaskDetailsComponent }
+    { path: 'task-details/:id', component: TaskDetailsComponent },
+    { path: 'pie-chart', component: PieChartComponent}
 
 ];
