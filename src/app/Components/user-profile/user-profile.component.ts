@@ -1,31 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Services/user.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [SideNavbarComponent, CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, SideNavbarComponent],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss'
 })
 export class UserProfileComponent implements OnInit {
   user: any = {};
   editMode: boolean = false;
-  profileImageUrl: SafeUrl = '';
+  profileImageUrl: string = '';
+  changePasswordForm!: FormGroup;
+  sanitizer: any;
+  router: any;
 
   constructor(
     private userService: UserService,
-    private router: Router,
-    private sanitizer: DomSanitizer
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.fetchUserDetails();
+    this.initChangePasswordForm();
   }
 
   fetchUserDetails(): void {
@@ -34,7 +37,7 @@ export class UserProfileComponent implements OnInit {
       this.userService.getUserById(userId).subscribe(
         user => {
           this.user = user;
-          this.getProfileImageUrl(user.profilePicture);
+          this.profileImageUrl = `assets/Images/${user.profilePicture}`;
         },
         error => {
           console.error('Error fetching user details:', error);
@@ -45,8 +48,10 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
+  
+
   getProfileImageUrl(imageName: string): void {
-    const imageUrl = `assets/images/${imageName}`;
+    const imageUrl = `assets/Images/${imageName}`;
     this.userService.getImageAsDataUrl(imageUrl).subscribe(
       dataUrl => {
         this.profileImageUrl = this.sanitizer.bypassSecurityTrustUrl(dataUrl);
@@ -56,6 +61,7 @@ export class UserProfileComponent implements OnInit {
       }
     );
   }
+
   toggleEditMode(): void {
     this.editMode = !this.editMode;
   }
@@ -82,10 +88,46 @@ export class UserProfileComponent implements OnInit {
 
   onFileSelected(event: any): void {
     if (event.target.files && event.target.files.length > 0) {
-      const file = event.target.files[0];
-      // Handle file upload or conversion to base64 string
-      // You may need to use additional libraries or APIs for file upload
-      this.user.profilePicture = file.name; // Assuming you want to store the file name
+      const file = event.target.files[0]
+      this.user.profilePicture = file.name; 
     }
+  }
+
+  initChangePasswordForm(): void {
+    this.changePasswordForm = this.formBuilder.group({
+      currentPassword: ['', Validators.required],
+      newPassword: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
+    });
+  }
+
+  get changePasswordControls() {
+    return this.changePasswordForm.controls;
+  }
+
+  savePassword(): void {
+    if (this.changePasswordForm.invalid) {
+      return;
+    }
+
+    const currentPassword = this.changePasswordControls['currentPassword'].value;
+    const newPassword = this.changePasswordControls['newPassword'].value;
+    const confirmPassword = this.changePasswordControls['confirmPassword'].value;
+
+    if (newPassword !== confirmPassword) {
+      window.alert("New password and confirm password don't match.");
+      return;
+    }
+
+    // Validate current password
+    if (this.user.password !== currentPassword) {
+      window.alert("Current password is incorrect.");
+      return;
+    }
+
+    // Update password
+    this.userService.updateUserPassword(newPassword);
+    window.alert("Password updated successfully!");
+    this.router.navigate(['/dashboard']);
   }
 }

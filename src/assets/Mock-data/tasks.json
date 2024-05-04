@@ -56,7 +56,7 @@
       "username": "anjali",
       "email": "anjali@gmail.com",
       "password": "123",
-      "profilePicture": "IMG_20191128_170909.jpg"
+      "profilePicture": "profile1.jpg"
     },
     {
       "id": "bf68",
@@ -64,6 +64,20 @@
       "email": "jun@gmail.com",
       "password": "123",
       "profilePicture": "IMG_20191128_143147.jpg"
+    },
+    {
+      "id": "2022",
+      "username": "theer",
+      "email": "theer@gmail.com",
+      "password": "125",
+      "profilePicture": "profile2.jpg"
+    },
+    {
+      "id": "6b3d",
+      "username": "kunjmma",
+      "email": "kunjjj@gmail.com",
+      "password": "123",
+      "profilePicture": "profile7.jpg"
     }
   ]
 }

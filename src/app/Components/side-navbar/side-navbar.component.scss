@@ -1,11 +1,28 @@
 
 .navbar {
-    background: linear-gradient(135deg, #008080, #80ced6);
-    padding: 5px 10px; 
-    display: flex;
-    justify-content: center;
-    color: white;
-  }
+  background: linear-gradient(135deg, #008080, #80ced6);
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between; /* Align user info to the right */
+  align-items: center;
+  color: white;
+}
+h2{
+  text-align: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  border-radius: 50%; /* Make it circular */
+  margin-right: 10px; /* Add some space between picture and email */
+}
+
   
   .toggle-button-row {
     position: fixed;

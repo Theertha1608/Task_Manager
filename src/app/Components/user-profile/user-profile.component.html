@@ -1,12 +1,15 @@
 <app-side-nav></app-side-nav>
-<div *ngIf="user" class="user-profile-container">
+
+<div class="user-profile-container">
   <div class="user-details">
     <h1>User Profile</h1>
     <p>Email: {{ user.email }}</p>
     <div *ngIf="!editMode">
-      <p>Profile Picture: <img [src]="profileImageUrl" alt="Profile Picture"></p>
+      <p><img [src]="profileImageUrl" alt="Profile Picture" class="profile-image"></p>
       <p>Username: {{ user.username }}</p>
-    </div> 
+    </div>
+    
+    
     <div *ngIf="editMode">
       <div>
         <label>Username:</label>
@@ -16,8 +19,29 @@
         <label>Profile Picture:</label>
         <input type="file" (change)="onFileSelected($event)">
       </div>
+
+      <!-- Edit mode form -->
     </div>
     <button class="button" (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
     <button class="button" *ngIf="editMode" (click)="saveUserDetails()">Save</button>
+  </div>
+
+  <div *ngIf="editMode" class="change-password">
+    <h2>Change Password</h2>
+    <form [formGroup]="changePasswordForm" (ngSubmit)="savePassword()">
+      <div>
+        <label>Current Password:</label>
+        <input type="password" formControlName="currentPassword">
+      </div>
+      <div>
+        <label>New Password:</label>
+        <input type="password" formControlName="newPassword">
+      </div>
+      <div>
+        <label>Confirm New Password:</label>
+        <input type="password" formControlName="confirmPassword">
+      </div>
+      <button type="submit" class="button">Save Password</button>
+    </form>
   </div>
 </div>
