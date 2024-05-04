@@ -7,20 +7,26 @@
   align-items: center;
   color: white;
 }
-h2{
-  text-align: center;
+
+.main-heading{
+  margin-left: 500px;
 }
 
 .user-info {
   display: flex;
   align-items: center;
 }
-
+.user-email-link {
+  color: white; // Set text color to white
+  text-decoration: none; // Remove underline
+  cursor: pointer; // Show pointer cursor when hovering over the link
+}
 .profile-picture {
-  width: 30px; /* Adjust size as needed */
-  height: 30px; /* Adjust size as needed */
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
   border-radius: 50%; /* Make it circular */
-  margin-right: 10px; /* Add some space between picture and email */
+  margin-right: 10px;
+  margin-left: 10px; /* Add some space between picture and email */
 }
 
   

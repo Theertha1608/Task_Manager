@@ -1,10 +1,10 @@
 <div class="navbar">
-    <h2>Task-Manager</h2>
-    <div class="user-info">
-      <!-- <img [src]="profileImageUrl" alt="Profile Picture" class="profile-picture"> -->
-      <!-- <p>{{ userEmail }}</p> -->
-    </div>
+  <h2 class="main-heading">Task-Manager</h2>
+  <div class="user-info">
+    <a [routerLink]="['/user-profile']" class="user-email-link">{{ userEmail }}</a>
+    <img *ngIf="userProfileImage" [src]="userProfileImage" alt="Profile Picture" class="profile-picture">
   </div>
+</div>
 
 <div>
     <div class="toggle-button-row" (click)="toggleSideOut()">

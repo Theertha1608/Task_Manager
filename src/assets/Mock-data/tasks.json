@@ -34,6 +34,15 @@
       "priority": "Medium",
       "status": "Completed",
       "userId": "bf68"
+    },
+    {
+      "id": "4877",
+      "title": "kunjus",
+      "description": "kiunjus",
+      "dueDate": "2024-06-05",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "6b3d"
     }
   ],
   "users": [
@@ -77,7 +86,7 @@
       "username": "kunjmma",
       "email": "kunjjj@gmail.com",
       "password": "123",
-      "profilePicture": "profile7.jpg"
+      "profilePicture": "profile8.jpg"
     }
   ]
 }
