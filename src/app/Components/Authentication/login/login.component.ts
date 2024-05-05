@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
-// import { NavbarComponent } from '../../navbar/navbar.component';
 import { SideNavbarComponent } from '../../side-navbar/side-navbar.component';
 import { CommonModule } from '@angular/common';
 import { SignupComponent } from '../signup/signup.component';
@@ -25,19 +24,22 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private userService: UserService // Inject UserService
   ) {
+    // Initialize the login form with validators
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]], // Email validator added
       password: ['', Validators.required]
     });
   }
 
   ngOnInit() { }
 
+  // Function to check if a form field is invalid
   isFieldInvalid(field: string) {
     const formField = this.loginForm.get(field);
     return formField?.invalid && (formField?.touched || formField?.dirty);
   }
 
+  // Function to handle form submission
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;

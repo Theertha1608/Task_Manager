@@ -11,10 +11,9 @@
 
         <!-- Only show the checkbox if the task status is not 'Completed' -->
         <div *ngIf="task.status !== 'Completed'">
-          <input type="checkbox" [(ngModel)]="taskCompleted" (change)="changeTaskStatus()">
-          <label for="task-status-checkbox">Task Completed</label>
-      </div>
-      
+            <input type="checkbox" [(ngModel)]="taskCompleted" (change)="changeTaskStatus()">
+            <label for="task-status-checkbox">Task Completed</label>
+        </div>
     </div>
 
     <div *ngIf="showEditForm" class="edit-task-form">

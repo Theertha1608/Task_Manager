@@ -1,114 +1,104 @@
-// /* Base styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Login container */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:linear-gradient(#d2fffb80, rgba(134, 126, 138, 0.5)), url('../../../../assets/Images/Background-Login.jpg'); /* Example path to background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-color: #f0f0f0; 
+}
 
-// body {
-//   font-family: sans-serif;
-//   margin: 0;
-//   padding: 0;
-// }
+  /* Login heading */
+  .login-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  /* Login form */
+  .login-form {
+    background-image: linear-gradient(to right, #5ae9e9 0%, #0e756d 100%);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    margin-right: 100px;
+  }
+  
+  /* Form group */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Input field */
+  .login-input {
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Input field on focus */
+  .login-input:focus {
+    outline: none;
+    border-color: #02423d;
+  }
+  
+  /* Invalid feedback */
+  .invalid-feedback {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+  
+  /* Submit button */
+  .login-form button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #002627;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Submit button disabled state */
+  .login-form button[disabled] {
+    background-color: #859c9a;
+    cursor: not-allowed;
+  }
 
-// /* Login container */
-
-// .login-container {
-//   display: flex;
-//   flex-direction: column; /* Stack elements vertically */
-//   align-items: center;
-//   padding: 30px;
-//   border-radius: 5px;
-//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-//   margin: 50px auto; /* Center horizontally with margin */
-//   max-width: 400px; /* Set a maximum width */
-// }
-
-// /* Login heading */
-
-// .login-heading {
-//   text-align: center;
-//   margin-bottom: 20px;
-//   font-size: 1.8em; /* Adjust heading size */
-//   color: #333;
-// }
-
-// /* Form group */
-
-// .form-group {
-//   margin-bottom: 15px;
-// }
-
-// /* Label */
-
-// .form-group label {
-//   display: block;
-//   margin-bottom: 5px;
-//   font-weight: bold;
-//   color: #333;
-// }
-
-// /* Input field */
-
-// .login-input {
-//   display: block;
-//   width: 100%; /* Adjust width as needed */
-//   padding: 10px;
-//   border: 1px solid #ccc;
-//   border-radius: 3px;
-//   box-sizing: border-box;
-//   font-size: 16px;
-// }
-
-// /* Input field on focus */
-
-// .login-input:focus {
-//   outline: none;
-//   border-color: #999; /* Slight border color change on focus */
-// }
-
-// /* Invalid feedback */
-
-// .invalid-feedback {
-//   color: red;
-//   font-size: 0.8em;
-//   margin-top: 5px;
-// }
-
-// /* Submit button */
-
-// .login-form button {
-//   display: block;
-//   width: 100%;
-//   padding: 10px 20px;
-//   background-color: #4CAF50; /* Primary button color */
-//   color: #fff;
-//   border: none;
-//   border-radius: 5px;
-//   cursor: pointer;
-//   font-size: 16px;
-//   margin-top: 15px; /* Add margin after form group */
-// }
-
-// .login-form button:hover,
-// .login-form button:focus {
-//   background-color: #3e8e41; /* Button hover/focus color */
-// }
-
-// .login-form button[disabled] {
-//   background-color: #ccc; /* Disabled button color */
-//   cursor: not-allowed;
-// }
-
-// /* Responsive adjustments */
-
-// @media (max-width: 768px) {
-//   .login-container {
-//     padding: 20px;
-//   }
-
-//   .login-heading {
-//     font-size: 1.5em;
-//   }
-
-//   .login-input {
-//     font-size: 14px;
-//   }
-// }
-
-
+  .signup-link{
+    color: #02423d;
+  }
+  
+  /* Sign up link */
+  .login-container p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .login-form {
+      max-width: 100%;
+    }
+  }

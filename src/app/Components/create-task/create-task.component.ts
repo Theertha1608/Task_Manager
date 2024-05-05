@@ -7,8 +7,6 @@ import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
 import { Router } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 
-
-
 @Component({
   selector: 'app-create-task',
   standalone: true,
@@ -17,8 +15,8 @@ import { UserService } from '../../Services/user.service';
   styleUrls: ['./create-task.component.scss']
 })
 export class CreateTaskComponent implements OnInit {
-  taskForm!: FormGroup;
-  currentUser: any;
+  taskForm!: FormGroup; // Initialize taskForm as FormGroup
+  currentUser: any; // Define currentUser variable
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,13 +26,17 @@ export class CreateTaskComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.currentUser = this.userService.currentUserValue; // Get the current user from the UserService
+    // Get the current user from the UserService
+    this.currentUser = this.userService.currentUserValue;
+    // Redirect to the dashboard page if the user is not authenticated
     if (!this.currentUser) {
-      this.router.navigate(['/dashboard']); // Redirect to the dashboard page if the user is not authenticated
+      this.router.navigate(['/dashboard']);
     }
+    // Initialize the form on component initialization
     this.initForm();
   }
 
+  // Function to initialize the task form
   initForm() {
     this.taskForm = this.formBuilder.group({
       title: ['', Validators.required],
@@ -45,8 +47,9 @@ export class CreateTaskComponent implements OnInit {
     });
   }
 
+  // Function to handle form submission
   onSubmit() {
-    if (this.taskForm.valid) {
+    if (this.taskForm.valid) { // Check if the form is valid
       const formData = this.taskForm.value;
       
       // Create a new task object with the current user's ID included
@@ -59,12 +62,13 @@ export class CreateTaskComponent implements OnInit {
         userId: this.currentUser.id // Include the current user's ID
       };
   
+      // Subscribe to the createTask method from TaskService
       this.taskService.createTask(task).subscribe(
         response => {
           console.log('Task created successfully!', response);
-          this.taskForm.reset();
+          this.taskForm.reset(); // Reset the form after successful submission
           alert('Task created successfully!');
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/dashboard']); // Navigate to the dashboard page after successful submission
         },
         error => {
           console.error('Error creating task:', error);
@@ -73,6 +77,7 @@ export class CreateTaskComponent implements OnInit {
     }
   }
 
+  // Function to check if a form field is invalid
   isFieldInvalid(field: string) {
     const control = this.taskForm.get(field);
     return control ? control.invalid && (control.dirty || control.touched) : false;

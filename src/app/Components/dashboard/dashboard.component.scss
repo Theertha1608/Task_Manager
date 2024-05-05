@@ -1,15 +1,17 @@
+/* Container for the dashboard */
 .dashboard-container {
-    display: flex;
-    width: 100%;
-  }
-  
-  .task-table-container {
-    flex: 1; /* This will make the task table container take up 50% of the width */
-    padding: 10px;
-  }
-  
-  .pie-chart-container {
-    flex: 1; /* This will make the pie chart container take up the remaining 50% of the width */
-    padding: 10px;
-  }
-  
+  display: flex;
+  width: 100%;
+}
+
+/* Container for the task table */
+.task-table-container {
+  flex: 1; 
+  padding: 10px;
+}
+
+/* Container for the pie chart */
+.pie-chart-container {
+  flex: 1; 
+  padding: 10px;
+}

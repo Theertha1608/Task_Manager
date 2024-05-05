@@ -1,25 +1,30 @@
+<!-- Navigation bar -->
 <div class="navbar">
   <h2 class="main-heading">Task-Manager</h2>
+  <!-- User information -->
   <div class="user-info">
+    <!-- User email link -->
     <a [routerLink]="['/user-profile']" class="user-email-link">{{ userEmail }}</a>
+    <!-- User profile picture -->
     <img *ngIf="userProfileImage" [src]="userProfileImage" alt="Profile Picture" class="profile-picture">
   </div>
 </div>
 
+<!-- Toggle button for slide-out panel -->
 <div>
     <div class="toggle-button-row" (click)="toggleSideOut()">
         <mat-icon>menu</mat-icon>
     </div>
 </div>
 
+<!-- Slide-out panel -->
 <div class="slide-out-panel" [class.slide-out]="isSideOut">
     <div class="slide-out-content">
+        <!-- Navigation links -->
         <h3 class="nav">To-Do</h3>
         <p class="edit-col" (click)="onHome()">Home</p>
         <p class="edit-col" (click)="onProfile()">Profile</p>
         <p class="edit-col" (click)="onAddTask()">Add Task</p>
         <p class="edit-col" (click)="onLogout()">Logout</p>
-
     </div>
-
 </div>

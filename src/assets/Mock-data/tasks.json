@@ -160,6 +160,42 @@
       "priority": "Medium",
       "status": "Pending",
       "userId": "f915"
+    },
+    {
+      "id": "a87c",
+      "title": "wee",
+      "description": "we",
+      "dueDate": "2024-06-02",
+      "priority": "Low",
+      "status": "Pending",
+      "userId": "f915"
+    },
+    {
+      "id": "4c04",
+      "title": "how",
+      "description": "how",
+      "dueDate": "2024-05-27",
+      "priority": "Low",
+      "status": "Pending",
+      "userId": "dfaf"
+    },
+    {
+      "id": "99a2",
+      "title": "add task ",
+      "description": "add task",
+      "dueDate": "2024-06-04",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "dfaf"
+    },
+    {
+      "id": "3e05",
+      "title": "reading",
+      "description": "reading",
+      "dueDate": "2024-05-28",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "dfaf"
     }
   ],
   "users": [
@@ -211,6 +247,27 @@
       "email": "new@gmail.com",
       "password": "123",
       "profilePicture": "profile2.jpg"
+    },
+    {
+      "id": "3a44",
+      "username": "theertha",
+      "email": "theertha@gamil.com",
+      "password": "neena123@*",
+      "profilePicture": "profile5.jpg"
+    },
+    {
+      "id": "6b04",
+      "username": "niya",
+      "email": "niya@gmail.com",
+      "password": "niya@123",
+      "profilePicture": "profile3.jpg"
+    },
+    {
+      "id": "dfaf",
+      "username": "theertha",
+      "email": "theertha@gmail.com",
+      "password": "theer@12",
+      "profilePicture": "profile5.jpg"
     }
   ]
 }

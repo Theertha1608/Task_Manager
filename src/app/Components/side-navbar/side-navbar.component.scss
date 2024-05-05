@@ -1,100 +1,111 @@
-
+/* Styles for navigation bar */
 .navbar {
   background: linear-gradient(135deg, #008080, #80ced6);
   padding: 5px 10px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   color: white;
 }
 
-.main-heading{
+/* Styles for main heading */
+.main-heading {
   margin-left: 500px;
 }
 
+/* Styles for user information */
 .user-info {
   display: flex;
   align-items: center;
 }
+
+/* Styles for user email link */
 .user-email-link {
-  color: white; 
-  text-decoration: none; 
-  cursor: pointer; 
-}
-.profile-picture {
-  width: 50px; 
-  height: 50px; 
-  border-radius: 50%; 
-  margin-right: 10px;
-  margin-left: 10px; 
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-  
-  .toggle-button-row {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1001;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .toggle-button-row mat-icon {
-    font-size: 24px;
-    color: #008080;
-  }
-  
+/* Styles for profile picture */
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Styles for toggle button */
+.toggle-button-row {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for toggle button icon */
+.toggle-button-row mat-icon {
+  font-size: 24px;
+  color: #008080;
+}
+
+/* Styles for slide-out panel */
+.slide-out-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background: linear-gradient(135deg, #008080, #80ced6);
+  transition: transform 0.3s ease-out;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for sliding out panel */
+.slide-out-panel.slide-out {
+  transform: translateX(-100%);
+}
+
+/* Styles for slide-out content */
+.slide-out-content {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+/* Styles for navigation links */
+.edit-col {
+  color: #000;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Hover styles for navigation links */
+.edit-col:hover {
+  color: #008080;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .slide-out-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 250px;
-    background: linear-gradient(135deg, #008080, #80ced6);
-    transition: transform 0.3s ease-out;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .slide-out-panel.slide-out {
-    transform: translateX(-100%);
+    width: 200px;
   }
   
   .slide-out-content {
-    margin-top: 80px;
-    padding: 20px;
+    margin-top: 60px;
+    padding: 15px;
   }
-  
-  .edit-col {
-    color: #000;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    margin-bottom: 10px;
-  }
-  
-  .edit-col:hover {
-    color: #008080;
-  }
-  
-
-  @media (max-width: 768px) {
-    .slide-out-panel {
-      width: 200px;
-    }
-    
-    .slide-out-content {
-      margin-top: 60px;
-      padding: 15px;
-    }
-  }
-  
+}

@@ -24,26 +24,32 @@ export class SideNavbarComponent {
     this.fetchUserDetails();
   }
 
+  // Toggle side navigation
   toggleSideOut(): void {
     this.isSideOut = !this.isSideOut;
   }
 
+  // Navigate to home
   onHome(): void {
     this.router.navigate(['/dashboard']);
   } 
 
+  // Navigate to user profile
   onProfile(): void {
     this.router.navigate(['/user-profile']);
   }
 
+  // Navigate to add task
   onAddTask(): void {
     this.router.navigate(['/create-task']);
   }
 
+  // Logout user
   onLogout(): void {
     this.router.navigate(['']);
   }
 
+  // Fetch user details
   private fetchUserDetails(): void {
     const userId = this.userService.getCurrentUserId();
     if (userId) {

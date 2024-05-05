@@ -5,10 +5,10 @@ import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-pie-chart',
-  standalone: true,
-  imports: [],
+  standalone: true, // Indicating that this component is standalone
+  imports: [], // No imports needed
   templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss']
+  styleUrls: ['./pie-chart.component.scss'] 
 })
 export class PieChartComponent implements OnInit {
   constructor(
@@ -17,19 +17,25 @@ export class PieChartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Get the current user's ID
     const currentUserId = this.userService.getCurrentUserId();
     if (currentUserId) {
+      // Generate pie chart for the user's tasks
       this.generatePieChart(currentUserId);
     }
   }
+
+  // Method to generate the pie chart
   generatePieChart(userId: string): void {
+    // Fetch tasks for the user
     this.taskService.getUserTasks(userId).subscribe((tasks: any[]) => {
       const tasksByPriority: { [priority: string]: any[] } = {
         'High': [],
         'Medium': [],
         'Low': []
       };
-  
+
+      // Categorize tasks by priority
       tasks.forEach(task => {
         if (task.priority === 'High') {
           tasksByPriority['High'].push(task);
@@ -39,9 +45,11 @@ export class PieChartComponent implements OnInit {
           tasksByPriority['Low'].push(task);
         }
       });
-  
+
+      // Define priorities
       const priorities = ['High', 'Medium', 'Low'];
-  
+
+      // Prepare data for pie chart
       const pieChartData = {
         labels: priorities,
         datasets: [{
@@ -54,12 +62,14 @@ export class PieChartComponent implements OnInit {
           borderWidth: 1
         }]
       };
-  
+
+      // Define options for pie chart
       const pieChartOptions = {
         responsive: true,
         maintainAspectRatio: false
       };
-  
+
+      // Create the pie chart
       new Chart('pieChartCanvas', {
         type: 'pie',
         data: pieChartData,

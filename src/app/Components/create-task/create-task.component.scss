@@ -1,55 +1,56 @@
-
+/* Center align the heading */
 .heading{
-    text-align: center;
+  text-align: center;
 }
 
+/* Style for the registration form */
 .register-form {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #08747c;
-    border-radius: 5px;
-    background-color: #ffffff;
-  }
-  
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #08747c;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
 
-  .register-form label {
-    font-weight: bold;
-  }
-  
+/* Bold label text */
+.register-form label {
+  font-weight: bold;
+}
 
-  .register-form input[type="text"],
-  .register-form textarea,
-  .register-form select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
+/* Input, textarea, and select styles */
+.register-form input[type="text"],
+.register-form textarea,
+.register-form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #0a6d70;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
 
-  .invalid-feedback {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  
+/* Invalid feedback message style */
+.invalid-feedback {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
 
-  .register-form button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0c807a;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .register-form button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+/* Style for the submit button */
+.register-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0c807a;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Disabled state for the submit button */
+.register-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
