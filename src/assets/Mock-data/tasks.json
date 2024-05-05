@@ -171,21 +171,12 @@
       "userId": "f915"
     },
     {
-      "id": "4c04",
-      "title": "how",
-      "description": "how",
-      "dueDate": "2024-05-27",
-      "priority": "Low",
-      "status": "Pending",
-      "userId": "dfaf"
-    },
-    {
       "id": "99a2",
       "title": "add task ",
       "description": "add task",
       "dueDate": "2024-06-04",
       "priority": "Medium",
-      "status": "Pending",
+      "status": "Completed",
       "userId": "dfaf"
     },
     {

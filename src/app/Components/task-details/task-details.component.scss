@@ -1,6 +1,17 @@
+.task-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this value as needed */
+}
+
 .task-details {
-  width: 50%;
-  margin-left: 5px;
+  max-width: 600px; /* Adjust the maximum width as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .task-details h1 {
@@ -9,21 +20,71 @@
 }
 
 .task-details p {
-  font-size: 16px;
   margin-bottom: 5px;
 }
 
-.task-details .button-container {
-  margin-top: 20px;
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #08747c;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
-button {
-  padding: 8px 12px;
-  margin: 4px;
+/* Checkbox style */
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+
+
+.edit-task-form {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #08747c;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.edit-task-form label {
+  font-weight: bold;
+}
+
+.edit-task-form input[type="text"],
+.edit-task-form textarea,
+.edit-task-form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #0a6d70;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.edit-task-form button {
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #008080;
+  border-radius: 5px;
+  background-color: #0c807a;
   color: #fff;
+  cursor: pointer;
+}
+
+.edit-task-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
