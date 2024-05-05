@@ -2,16 +2,17 @@
   <h2 class="login-heading">Login</h2>
   <form  class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" class="login-input" formControlName="email" required>
+      <!-- <label for="email">Email</label> -->
+      <input type="email" id="email" class="login-input" placeholder="Enmail" formControlName="email" required>
+      
       <div *ngIf="isFieldInvalid('email')" class="invalid-feedback">
         Please enter a valid email address.
       </div>
     </div>
 
     <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" class="login-input" formControlName="password" required>
+      <!-- <label for="password">Password</label> -->
+      <input type="password" id="password" class="login-input" placeholder="Password" formControlName="password" required>
       <div *ngIf="isFieldInvalid('password')" class="invalid-feedback">
         Please enter your password.
       </div>

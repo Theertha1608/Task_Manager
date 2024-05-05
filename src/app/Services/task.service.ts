@@ -39,6 +39,9 @@ export class TaskService {
   updateTask(taskId: number, updatedTask: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${taskId}`, updatedTask);
   }
+  getUserTasks(userId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
+  }
   getTasksGroupedByPriority(): Observable<{ [priority: string]: any[] }> {
     return this.http.get<any[]>(this.apiUrl).pipe(
       map((tasks: any[]) => {

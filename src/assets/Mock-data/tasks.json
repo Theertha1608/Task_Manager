@@ -133,6 +133,33 @@
       "priority": "Medium",
       "status": "Completed",
       "userId": "2022"
+    },
+    {
+      "id": "ce83",
+      "title": "work",
+      "description": "work",
+      "dueDate": "2024-06-05",
+      "priority": "Low",
+      "status": "Pending",
+      "userId": "f915"
+    },
+    {
+      "id": "f05f",
+      "title": "work1",
+      "description": "work1",
+      "dueDate": "2024-06-04",
+      "priority": "Low",
+      "status": "Pending",
+      "userId": "f915"
+    },
+    {
+      "id": "fc00",
+      "title": "yo",
+      "description": "io",
+      "dueDate": "2024-06-05",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "f915"
     }
   ],
   "users": [
@@ -177,6 +204,13 @@
       "email": "kunjjj@gmail.com",
       "password": "123",
       "profilePicture": "profile8.jpg"
+    },
+    {
+      "id": "f915",
+      "username": "new",
+      "email": "new@gmail.com",
+      "password": "123",
+      "profilePicture": "profile2.jpg"
     }
   ]
 }
