@@ -1,18 +1,20 @@
 <app-side-nav></app-side-nav>
-<div *ngIf="task" class="task-details-container">
-    <div class="task-details">
-        <h1>{{ task.title }}</h1>
-        <p class="description">Description: {{ task.description }}</p>
-        <p class="due-date">Due Date: {{ task.dueDate }}</p>
-        <p class="priority">Priority: {{ task.priority }}</p>
-        <p class="status">Status: {{ task.status }}</p>
-        <button class="button" (click)="editTask()">Edit</button>
-        <button class="button" (click)="deleteTask()">Delete</button>
+<div class="container">
+    <div *ngIf="task" class="task-details-container">
+        <div class="task-details">
+            <h1>{{ task.title }}</h1>
+            <p class="description">Description: {{ task.description }}</p>
+            <p class="due-date">Due Date: {{ task.dueDate }}</p>
+            <p class="priority">Priority: {{ task.priority }}</p>
+            <p class="status">Status: {{ task.status }}</p>
+            <button class="button" (click)="editTask()">Edit</button>
+            <button class="button" (click)="deleteTask()">Delete</button>
 
-        <!-- Only show the checkbox if the task status is not 'Completed' -->
-        <div *ngIf="task.status !== 'Completed'">
-            <input type="checkbox" [(ngModel)]="taskCompleted" (change)="changeTaskStatus()">
-            <label for="task-status-checkbox">Task Completed</label>
+            <!-- Only show the checkbox if the task status is not 'Completed' -->
+            <div *ngIf="task.status !== 'Completed'">
+                <input type="checkbox" [(ngModel)]="taskCompleted" (change)="changeTaskStatus()">
+                <label for="task-status-checkbox">Task Completed</label>
+            </div>
         </div>
     </div>
 

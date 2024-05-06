@@ -8,6 +8,7 @@ import { SignupComponent } from '../signup/signup.component';
 import { AuthService } from '../../../Services/auth.service';
 import { UserService } from '../../../Services/user.service';
 
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -22,11 +23,11 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private userService: UserService // Inject UserService
+    private userService: UserService 
   ) {
     // Initialize the login form with validators
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]], // Email validator added
+      email: ['', [Validators.required, Validators.email]], 
       password: ['', Validators.required]
     });
   }

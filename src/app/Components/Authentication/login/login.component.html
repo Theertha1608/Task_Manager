@@ -1,12 +1,10 @@
 <div class="login-container">
   <!-- Login Form -->
   <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <!-- Login Heading -->
     <h2 class="login-heading">LOGIN</h2>
     
     <!-- Email Input -->
     <div class="form-group">
-      <!-- <label for="email">Email</label> -->
       <input type="email" id="email" class="login-input" placeholder="Email" formControlName="email" required>
       
       <!-- Email Validation Error Message -->
@@ -17,7 +15,6 @@
 
     <!-- Password Input -->
     <div class="form-group">
-      <!-- <label for="password">Password</label> -->
       <input type="password" id="password" class="login-input" placeholder="Password" formControlName="password" required>
       
       <!-- Password Validation Error Message -->

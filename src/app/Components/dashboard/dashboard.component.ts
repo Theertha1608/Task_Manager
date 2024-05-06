@@ -7,7 +7,7 @@ import { PieChartComponent } from '../pie-chart/pie-chart.component';
 @Component({
   selector: 'app-dashboard',
   standalone: true, 
-  imports: [SideNavbarComponent, TaskTableComponent, PieChartComponent], // Importing necessary components
+  imports: [SideNavbarComponent, TaskTableComponent, PieChartComponent], 
   templateUrl: './dashboard.component.html', 
   styleUrl: './dashboard.component.scss' 
 })

@@ -1,5 +1,7 @@
 <div class="table-container">
+  <!-- Filter container -->
   <div class="filter-container">
+    <!-- Filter by Status label and dropdown -->
     <label for="status-filter">Filter by Status:</label>
     <select id="status-filter" [(ngModel)]="selectedStatus" (change)="filterTasks()">
       <option value="all">All</option>
@@ -7,10 +9,13 @@
       <option value="completed">Completed</option>
       <option value="overdue">Overdue</option>
     </select>
+    <!-- Button to navigate to create task page -->
     <button class="create-task-button" (click)="navigateToCreateTask()">Create Task</button>
   </div>
+  <!-- Task table -->
   <table>
     <thead>
+      <!-- Table header -->
       <tr>
         <th>Title</th>
         <th>Due Date</th>
@@ -19,12 +24,16 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Table rows for each task -->
       <tr *ngFor="let task of filteredTasks">
+        <!-- Display task details -->
         <td>{{ task.title }}</td>
         <td>{{ task.dueDate }}</td>
+        <!-- Button to view task details -->
         <td>
           <button (click)="viewTaskDetails(task.id)">View Details</button>
         </td>
+        <!-- Display task status -->
         <td>{{ task.status }}</td>
       </tr>
     </tbody>

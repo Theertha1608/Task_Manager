@@ -65,12 +65,13 @@ export class CreateTaskComponent implements OnInit {
       // Subscribe to the createTask method from TaskService
       this.taskService.createTask(task).subscribe(
         response => {
-          console.log('Task created successfully!', response);
-          this.taskForm.reset(); // Reset the form after successful submission
+          // Success message
           alert('Task created successfully!');
+          this.taskForm.reset(); // Reset the form after successful submission
           this.router.navigate(['/dashboard']); // Navigate to the dashboard page after successful submission
         },
         error => {
+          // Error message
           console.error('Error creating task:', error);
         }
       );

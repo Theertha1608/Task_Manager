@@ -1,6 +1,81 @@
+.user-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this value as needed */
+}
+
+.user-details {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align the text */
+}
+
 .profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.edit-mode-form {
+  margin-top: 10px; /* Add margin to separate the edit mode form */
+}
+
+.edit-username,
+.edit-profile-picture {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #0a6d70;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.change-password {
+  margin-top: 20px; /* Add margin to separate the change password section */
+}
+
+
+.current-password,
+.new-password,
+.confirm-password {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #0a6d70;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.change-password-container {
+  margin-top: 10px;
+}
+.change-password {
+  margin-left: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0c807a;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .user-details {
+    max-width: 80%; /* Adjust for smaller screens */
   }
-  
+}

@@ -7,7 +7,7 @@ import { UserService } from '../../Services/user.service';
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule, SideNavbarComponent],
+  imports: [CommonModule, RouterLink, MatIconModule],
   templateUrl: './side-navbar.component.html',
   styleUrl: './side-navbar.component.scss'
 })
@@ -57,13 +57,8 @@ export class SideNavbarComponent {
         user => {
           this.userEmail = user.email;
           this.userProfileImage = `assets/Images/${user.profilePicture}`;
-        },
-        error => {
-          console.error('Error fetching user details:', error);
         }
       );
-    } else {
-      console.error('User ID is null.');
     }
   }
 }

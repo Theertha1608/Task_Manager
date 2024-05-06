@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { UserService } from '../../Services/user.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
 
 @Component({
@@ -31,6 +30,7 @@ export class UserProfileComponent implements OnInit {
     this.initChangePasswordForm();
   }
 
+  // Fetch user details from the service
   fetchUserDetails(): void {
     const userId = this.userService.getCurrentUserId();
     if (userId) {
@@ -38,54 +38,48 @@ export class UserProfileComponent implements OnInit {
         user => {
           this.user = user;
           this.profileImageUrl = `assets/Images/${user.profilePicture}`;
-        },
-        error => {
-          console.error('Error fetching user details:', error);
         }
       );
-    } else {
-      console.error('User ID is null.');
     }
   }
 
-  
-
+  // Get profile image URL from assets
   getProfileImageUrl(imageName: string): void {
     const imageUrl = `assets/Images/${imageName}`;
     this.userService.getImageAsDataUrl(imageUrl).subscribe(
       dataUrl => {
         this.profileImageUrl = this.sanitizer.bypassSecurityTrustUrl(dataUrl);
-      },
-      error => {
-        console.error('Error loading profile image:', error);
       }
     );
   }
 
+  // Toggle edit mode for user details
   toggleEditMode(): void {
     this.editMode = !this.editMode;
   }
 
+  // Save user details
   saveUserDetails(): void {
     const userId = this.userService.getCurrentUserId();
     if (userId && this.user) {
       this.userService.updateUser(userId, this.user).subscribe(
         response => {
-          console.log('User details updated successfully!', response);
-          this.editMode = false;
+          // Success message
           window.alert('User details updated successfully!');
+          this.editMode = false;
         },
         error => {
-          console.error('Error updating user details:', error);
+          // Error message
           window.alert('Failed to update user details. Please try again.');
         }
       );
     } else {
-      console.error('User ID or user object is null.');
+      // Error message
       window.alert('Failed to update user details. User ID or user object is null.');
     }
   }
 
+  // Handle file selection for profile picture
   onFileSelected(event: any): void {
     if (event.target.files && event.target.files.length > 0) {
       const file = event.target.files[0]
@@ -93,6 +87,7 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
+  // Initialize change password form
   initChangePasswordForm(): void {
     this.changePasswordForm = this.formBuilder.group({
       currentPassword: ['', Validators.required],
@@ -101,10 +96,12 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  // Getter for change password form controls
   get changePasswordControls() {
     return this.changePasswordForm.controls;
   }
 
+  // Save password
   savePassword(): void {
     if (this.changePasswordForm.invalid) {
       return;
@@ -115,18 +112,21 @@ export class UserProfileComponent implements OnInit {
     const confirmPassword = this.changePasswordControls['confirmPassword'].value;
 
     if (newPassword !== confirmPassword) {
+      // Error message
       window.alert("New password and confirm password don't match.");
       return;
     }
 
     // Validate current password
     if (this.user.password !== currentPassword) {
+      // Error message
       window.alert("Current password is incorrect.");
       return;
     }
 
     // Update password
     this.userService.updateUserPassword(newPassword);
+    // Success message
     window.alert("Password updated successfully!");
     this.router.navigate(['/dashboard']);
   }

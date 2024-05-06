@@ -5,8 +5,8 @@ import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-pie-chart',
-  standalone: true, // Indicating that this component is standalone
-  imports: [], // No imports needed
+  standalone: true, 
+  imports: [],
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.scss'] 
 })

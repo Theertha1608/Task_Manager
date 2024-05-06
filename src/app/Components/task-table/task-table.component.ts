@@ -7,7 +7,6 @@ import { TaskDetailsComponent } from '../task-details/task-details.component';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 
-
 @Component({
   selector: 'app-task-table',
   standalone: true,
@@ -35,29 +34,30 @@ export class TaskTableComponent implements OnInit {
     });
   }
 
+  // Fetch tasks associated with the current user
   fetchTasks(): void {
     this.taskService.getTasksByUserId(this.currentUser.id).subscribe(
-      (      tasks: any[]) => {
+      (tasks: any[]) => {
         this.tasks = tasks;
         this.filteredTasks = [...this.tasks];
       },
-      (      error: any) => {
+      (error: any) => {
         console.error('Error fetching tasks:', error);
       }
     );
   }
 
-
-
+  // Navigate to task details page
   viewTaskDetails(taskId: number): void {
     this.router.navigate(['/task-details', taskId]);
   }
 
+  // Navigate to create task page
   navigateToCreateTask(): void {
     this.router.navigate(['/create-task']);
-
   }
   
+  // Filter tasks based on selected status
   filterTasks(): void {
     if (this.selectedStatus === 'all') {
       this.filteredTasks = [...this.tasks];
@@ -75,6 +75,4 @@ export class TaskTableComponent implements OnInit {
       });
     }
   }
-
 }
-
