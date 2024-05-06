@@ -1,22 +1,31 @@
 {
   "tasks": [
     {
-      "id": "9f3b",
-      "title": "hi",
-      "description": "hi",
-      "dueDate": "2024-06-03",
+      "id": "68b7",
+      "title": "Reeding Books",
+      "description": "Reading Books",
+      "dueDate": "2024-06-04",
       "priority": "Medium",
       "status": "Pending",
-      "userId": "ae02"
+      "userId": "9c43"
+    },
+    {
+      "id": "6d76",
+      "title": "Complete the task",
+      "description": "Complete the final task",
+      "dueDate": "2024-05-06",
+      "priority": "High",
+      "status": "Completed",
+      "userId": "9c43"
     }
   ],
   "users": [
     {
-      "id": "ae02",
-      "username": "nila",
-      "email": "nila@gmail.com",
-      "password": "nila@123",
-      "profilePicture": "profile2.jpg"
+      "id": "9c43",
+      "username": "theertha",
+      "email": "theertha@gmail.com",
+      "password": "Theertha@12",
+      "profilePicture": "profile7.jpg"
     }
   ]
 }
